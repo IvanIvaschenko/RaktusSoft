@@ -1,4 +1,4 @@
-import {DATA_FETCHED, FETCHING_DATA, FETCHING_DATA_ERROR} from '../constants/Page'
+import {DATA_FETCHED, FETCHING_DATA_ERROR} from '../constants/Page'
 
 export function fetchData() {
   return (dispatch) => {
@@ -10,12 +10,13 @@ export function fetchData() {
           if (data.err) {
             dispatch({
               type: FETCHING_DATA_ERROR,
-              payload: true
+              payload: data.err
             });
           } else {
+            console.log(data);
             dispatch({
               type: DATA_FETCHED,
-              payload: JSON.parse(data)
+              payload: data
             });
           }
         })

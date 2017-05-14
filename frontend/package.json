@@ -1,5 +1,5 @@
 {
-  "name": "redux-ru-tutorial",
+  "name": "app",
   "version": "1.0.0",
   "description": "SPA",
   "main": "index.js",
@@ -22,6 +22,7 @@
     "eslint-loader": "^1.2.1",
     "eslint-plugin-react": "^3.16.1",
     "express": "^4.13.4",
+    "node-sass": "^4.5.2",
     "npm-install-webpack-plugin": "^2.0.2",
     "postcss-loader": "^0.8.0",
     "precss": "^1.4.0",
@@ -36,7 +37,6 @@
     "babel-polyfill": "^6.3.14",
     "babel-runtime": "^6.3.19",
     "react": "^0.14.6",
-    "react-autobind": "^1.0.6",
     "react-dom": "^0.14.6",
     "react-redux": "^4.0.6",
     "redux": "^3.0.6",

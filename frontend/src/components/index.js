@@ -7,8 +7,23 @@ class Page extends Component {
   }
 
   render() {
+    console.log(this.props.page.data);
+    const posts = this.props.page.data.map((item, index)=>{
+      return(
+      <div key={index}>
+        <h1>{item.artist}</h1>
+        <h2>{item.concertPlace}</h2>
+        <h2>{item.perfomansRecords}</h2>
+      </div>
+    )
+    }
+  )
+  console.log(posts);
     return(
-      hello
+      <div>
+        <p>{this.props.page.error ? 'err' : 'nonerror'}</p>
+        {posts}
+      </div>
     )
   }
 }

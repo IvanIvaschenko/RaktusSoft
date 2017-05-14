@@ -5,6 +5,11 @@ var jwt    = require('jsonwebtoken');
 
 process.env.SECRET_KEY = 'verysecretkey';
 
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -42,43 +47,39 @@ app.get('/api/data', function(req, res) {
 });
 
 app.post('/api/authenticate', function( req, res) {
+
 		if (User.username!==req.body.username && User.password !== req.body.password) {
 			res.json({ success: false, message: 'Authentication failed' });
-      console.log('username fail');
-    }
-    else {
-      console.log('else');
-				var token = jwt.sign(User.username, process.env.SECRET_KEY);
-				res.json({
-					success: true,
-					message: 'Enjoy your token!',
-					token: token
-				});
-			}
+    } else {
+		  var token = jwt.sign(User.username, process.env.SECRET_KEY);
+			res.json({
+				success: true,
+				message: 'Enjoy your token!',
+				token: token
+			});
 		}
+
+	}
 );
 
 app.use(function(req, res, next) {
-  console.log(req.param);
-	var token = req.body.token || req.param('token') || req.headers['x-access-token'];
-	if (token) {
 
+	var token = req.body.token || req.param('token') || req.headers['x-access-token'];
+
+	if (token) {
 		jwt.verify(token, process.env.SECRET_KEY, function(err, decoded) {
 			if (err) {
 				return res.json({ success: false, message: 'Failed to authenticate token.' });
 			} else {
-        console.log(decoded);
 				req.decoded = decoded;
 				next();
 			}
 		});
-
 	} else {
 		return res.status(403).send({
 			success: false,
 			message: 'No token provided.'
 		});
-
 	}
 
 });

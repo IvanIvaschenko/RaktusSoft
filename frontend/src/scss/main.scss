@@ -1,0 +1,195 @@
+
+body{
+  background: #1abc9c;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  color: white;
+}
+
+
+h1{
+  font-size: 1rem;
+}
+
+h2{
+  font-size: 0.9rem;
+}
+
+.app{
+  padding-top: 80px;
+}
+
+header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #16a085;
+  height: 60px;
+  margin-bottom: 15px;
+  padding:0 10px;
+}
+
+header h3{
+  display: inline-block;
+  color: white;
+  margin-right: 10%;
+  vertical-align: middle;
+}
+
+.auth{
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.auth h3{
+  margin: 0;
+  vertical-align: top;
+}
+
+.login {
+	margin: 50px auto;
+	width: 300px;
+  position: absolute;
+  right: 15px;
+  top: 5%;
+}
+
+.login h1{
+  color: #2c3e50;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.close-btn{
+  margin-left: 100px;
+  cursor: pointer;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -80%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+}
+
+ input[type="text"], input[type="password"], .add-post input {
+	background: #e5e5e5;
+	border: none;
+	border-radius: 3px;
+	color: #5a5656;
+	font-family: inherit;
+	font-size: 14px;
+	height: 50px;
+	outline: none;
+	padding: 0px 10px;
+  margin-bottom: 10px;
+	width: 280px;
+  -webkit-appearance:none;
+}
+
+.send-btn {
+	background: #16a085;
+	border: none;
+	border-radius: 3px;
+	color: #f4f4f4;
+	cursor: pointer;
+	font-family: inherit;
+	height: 50px;
+	text-transform: uppercase;
+	width: 300px;
+  -webkit-appearance:none;
+}
+
+.add-post input{
+  display: inline-block;
+  margin: 10px;
+}
+
+.add-post h1{
+  margin-left: 10px;
+}
+
+.post{
+  color: white;
+  border-bottom: 2px solid white;
+  margin: 0 15px 15px 15px;
+}
+
+.post div, .list-header div{
+  width: 16%;
+  display: inline-block;
+  margin: 0 12px 0 0;
+  text-align: left;
+}
+
+.add-btn{
+  width: 300px;
+  margin-left: 10px;
+}
+
+.delete{
+  width: 10px;
+  cursor: pointer;
+}
+
+.edit{
+  display: inline-block;
+  cursor: pointer;
+}
+
+.close-edit{
+  cursor: pointer;
+}
+
+.danger{
+  display: none;
+}
+
+.err{
+  font-size: 2rem;
+  color: red;
+}
+
+
+@media (min-width: 768px){
+  h1{
+    font-size: 1.5rem;
+  }
+
+  h2{
+    font-size: 1.3rem;
+  }
+}

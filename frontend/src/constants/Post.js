@@ -1,0 +1,10 @@
+export const DELETE_ERRORED = 'DELETE_ERRORED';
+export const DELETE_SUCCESS = 'DELETE_SUCCESS';
+export const DATA_FETCHED = 'DATA_FETCHED';
+export const FETCHING_DATA_ERROR = 'FETCHING_DATA_ERROR';
+export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
+export const ADD_POST_ERRORED = 'ADD_POST_SUCCESS';
+export const EDIT = 'EDIT';
+export const CLOSE_EDIT = 'CLOSE_EDIT';
+export const UPDATE_ERROR = 'UPDATE_ERROR';
+export const UPDATE_SUCCESS = 'UPDATE_SUCCESS'

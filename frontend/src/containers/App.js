@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Page from '../components'
-import * as PageActions from '../actions/PageActions'
+import * as AuthActions from '../actions/AuthActions'
+import * as PostActions from '../actions/PostsActions'
 
 class App extends Component {
   constructor(props) {
@@ -10,22 +11,24 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App">
-        <Page pageActions = {this.props.pageActions} page={this.props.page}/>
+    return <div>
+        <Page authActions = {this.props.authActions} postActions={this.props.postActions} post={this.props.post} auth={this.props.auth}/>
     </div>
   }
 }
 
 function mapStateToProps(state) {
   return {
-    page: state.page
+    auth: state.auth,
+    post: state.post
   }
 }
 
 
 function mapDispatchToProps(dispatch) {
   return {
-    pageActions: bindActionCreators(PageActions, dispatch)
+    authActions: bindActionCreators(AuthActions, dispatch),
+    postActions: bindActionCreators(PostActions, dispatch)
   }
 }
 
